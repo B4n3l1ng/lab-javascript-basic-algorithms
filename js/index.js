@@ -91,14 +91,12 @@ function logNameSpacesCaps (name) {
 
 
  //Bonus 2
- const phraseToCheck = "Roma, amor";
+ const phraseToCheck = "Was it a car or a cat I saw?";
  function checkIfPalin (phrase) {
-    let toReplace = /[,!.]/g;
-    let phraseArray = phrase.toLowerCase().replace(toReplace, " ");
-    let size = phraseArray.length;
+    let phraseArray = phrase.toLowerCase().replace(/[,!.\s'?]/g, "");
     let result;
-    for (let i=0; i<size/2; i++) {
-        if (phraseArray[i] !== phraseArray[size-1-i]) {
+    for (let i=0; i<phraseArray.length/2 - 1; i++) {
+        if (phraseArray[i] !== phraseArray[phraseArray.length-1-i]) {
             result = false;
             break;
         } else {
