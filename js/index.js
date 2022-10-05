@@ -88,3 +88,28 @@ function logNameSpacesCaps (name) {
 
  console.log(countWords(paragraph));
  console.log(countEt(paragraph));
+
+
+ //Bonus 2
+ const phraseToCheck = "Amor, Roma";
+ function checkIfPalin (phrase) {
+    let toReplace = /[ ,!.]/g;
+    let phraseArray = phrase.toLowerCase().replace(toReplace, " ");
+    let size = phraseArray.length;
+    let result;
+    for (let i=0; i<size/2; i++) {
+        if (phraseArray[i] !== phraseArray[size-1-i]) {
+            result = false;
+            break;
+        } else {
+            result = true;
+        }
+    }
+    
+    if (result === true) {
+        console.log("It's a Palindrome");
+    } else if (result === false) {
+        console.log("It's not a Palindrome");
+    }
+ }
+ checkIfPalin (phraseToCheck);
